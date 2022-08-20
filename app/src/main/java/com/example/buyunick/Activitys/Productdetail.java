@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.text.Html;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -18,7 +19,10 @@ import com.android.volley.toolbox.Volley;
 import com.bumptech.glide.Glide;
 import com.example.buyunick.R;
 import com.example.buyunick.databinding.ActivityProductdetailBinding;
+import com.example.buyunick.modals.product;
 import com.example.buyunick.utility.Constants;
+import com.hishd.tinycart.model.Cart;
+import com.hishd.tinycart.util.TinyCartHelper;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -26,6 +30,7 @@ import org.json.JSONObject;
 public class Productdetail extends AppCompatActivity {
 
     ActivityProductdetailBinding binding;
+    product currentproduct;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +51,16 @@ public class Productdetail extends AppCompatActivity {
         Getproductdatail(id);
         getSupportActionBar().setTitle(name);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        Cart cart = TinyCartHelper.getCart();
+
+        binding.addtocard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                cart.addItem(currentproduct, 1);
+            }
+        });
     }
 
     @Override
@@ -87,6 +102,15 @@ public class Productdetail extends AppCompatActivity {
                                 String descreption = product.getString("description");
                                 binding.productdiscription.setText(
                                         Html.fromHtml(descreption)
+                                );
+                                currentproduct = new product(
+                                        product.getString("name"),
+                                        Constants.PRODUCTS_IMAGE_URL+product.getString("image"),
+                                        product.getString("status"),
+                                        product.getDouble("price"),
+                                        product.getDouble("price_discount"),
+                                        product.getInt("stock"),
+                                        product.getInt("id")
                                 );
                             }
 

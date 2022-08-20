@@ -72,11 +72,10 @@
                 android:id="@+id/Prices"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="10dp"
                 android:layout_weight="1"
                 android:gravity="right"
                 android:text="₹ 0.0"
-                android:textColor="#4FC154"
+                android:textColor="#E53935"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
@@ -105,7 +104,7 @@
             android:fontFamily="@font/archivo_black"
             android:shadowRadius="10"
             android:text="Continue"
-            android:textSize="20sp"
+            android:textSize="16sp"
             app:cornerRadius="5dp" />
     </LinearLayout>
 

@@ -41,7 +41,7 @@ public class product_adoptor extends RecyclerView.Adapter<product_adoptor.produc
                 .load(product.getMages())
                 .into(holder.binding.imagess);
         holder.binding.leble.setText(product.getName());
-        holder.binding.price.setText("Rups" + product.getPrice());
+        holder.binding.price.setText("₹ " + product.getPrice());
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

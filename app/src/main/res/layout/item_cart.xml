@@ -32,7 +32,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
+                android:ellipsize="end"
                 android:fontFamily="@font/arbutus"
+                android:maxLines="1"
                 android:text="Product Name"
                 android:textStyle="bold" />
 
@@ -58,7 +60,7 @@
                     android:gravity="right"
                     android:paddingRight="5dp"
                     android:text="₹ 100"
-                    android:textColor="#61E166"
+                    android:textColor="#25CF2B"
                     android:textStyle="bold" />
             </LinearLayout>
         </LinearLayout>

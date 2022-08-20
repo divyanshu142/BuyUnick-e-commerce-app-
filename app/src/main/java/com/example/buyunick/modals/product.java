@@ -1,9 +1,15 @@
 package com.example.buyunick.modals;
 
-public class product {
+import com.hishd.tinycart.model.Item;
+
+import java.io.Serializable;
+import java.math.BigDecimal;
+
+public class product implements Item, Serializable {
     private String name, mages, status;
     private double price,discount;
     private int stoke, id;
+    private int GetQuantity;
 
     public product(String name, String mages, String status, double price, double discount, int stoke, int id) {
         this.name = name;
@@ -67,5 +73,23 @@ public class product {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    @Override
+    public BigDecimal getItemPrice() {
+        return new BigDecimal(price);
+    }
+
+    @Override
+    public String getItemName() {
+        return name;
+    }
+
+    public int getGetQuantity() {
+        return GetQuantity;
+    }
+
+    public void setGetQuantity(int getQuantity) {
+        GetQuantity = getQuantity;
     }
 }
