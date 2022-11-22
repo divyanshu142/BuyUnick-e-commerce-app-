@@ -12,13 +12,21 @@ https://user-images.githubusercontent.com/66571532/203395885-664787d9-0382-4014-
 
 # Used Libraries/ Features/ Database 😊
 1 Android Volley
+
 2 SQL
+
 3 Rounded Image View
+
 4 Carousel
+
 5 Material
+
 6 Search Bar
+
 7 Tiny Cart
+
 8 Recycler view
-9separation of class.
+
+9 separation of class.
 
 
